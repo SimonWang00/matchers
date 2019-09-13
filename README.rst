@@ -5,7 +5,6 @@ Matchers
    :target: https://pypi.python.org/pypi/matchers
    :alt: PyPI Version
 
-
 Overview
 ========
 
@@ -25,7 +24,6 @@ The quick way::
 
     pip install matchers
 
-
 Releases
 ========
 
@@ -35,11 +33,6 @@ Community (blog, CSDN, mail list, IRC)
 =========================================
 
 See https://blog.csdn.net/weixin_39128119
-
-Contributing
-============
-
-See https://github.com/SimonWang00/matchers.git
 
 
 Usage
@@ -63,7 +56,6 @@ For: Web pages, strings, and JSON. Common Analytical Examples:
 
     # email提取
     >>> Matchers().match_email(content)
-    2019-09-13 22:43:42,337 - root - INFO - Start commonParse engine
     ['liulinjun@huawei.com']
 
     # 地址提取

@@ -1,38 +1,21 @@
-﻿======
 Matchers
-======
+========
 
-.. image:: https://img.shields.io/pypi/v/Scrapy.svg
-   :target: https://pypi.python.org/pypi/Scrapy
+.. image:: https://img.shields.io/pypi/v/matchers.svg?colorB=blue
+   :target: https://pypi.python.org/pypi/matchers
    :alt: PyPI Version
-
-.. image: https://pypi.python.org/pypi/Scrapy
-   :alt: Supported Python Versions
-
-
-.. image:: https://img.shields.io/codecov/c/github/scrapy/scrapy/master.svg
-   :target: https://codecov.io/github/scrapy/scrapy?branch=master
-   :alt: Coverage report
-
-.. image:: https://anaconda.org/conda-forge/scrapy/badges/version.svg
-   :target: https://anaconda.org/conda-forge/scrapy
-   :alt: Conda Version
 
 
 Overview
 ========
 
-Scrapy is a fast high-level web crawling and web scraping framework, used to
-crawl websites and extract structured data from their pages. It can be used for
-a wide range of purposes, from data mining to monitoring and automated testing.
+打造最好用的万能解析神器/Create the Best Universal Resolution Artifact.
 
-For more information including a list of features check the Scrapy homepage at:
-https://scrapy.org
 
 Requirements
 ============
 
-* Python 2.7 or Python 3.5+
+* Python 3.+
 * Works on Linux, Windows, Mac OSX, BSD
 
 Install
@@ -40,47 +23,78 @@ Install
 
 The quick way::
 
-    pip install scrapy
+    pip install matchers
 
-For more details see the install section in the documentation:
-https://docs.scrapy.org/en/latest/intro/install.html
-
-Documentation
-=============
-
-Documentation is available online at https://docs.scrapy.org/ and in the ``docs``
-directory.
 
 Releases
 ========
 
-You can find release notes at https://docs.scrapy.org/en/latest/news.html
+You can find release notes at https://github.com/SimonWang00/matchers.git
 
-Community (blog, twitter, mail list, IRC)
+Community (blog, CSDN, mail list, IRC)
 =========================================
 
-See https://scrapy.org/community/
+See https://blog.csdn.net/weixin_39128119
 
 Contributing
 ============
 
-See https://docs.scrapy.org/en/master/contributing.html
+See https://github.com/SimonWang00/matchers.git
 
-Code of Conduct
----------------
 
-Please note that this project is released with a Contributor Code of Conduct
-(see https://github.com/scrapy/scrapy/blob/master/CODE_OF_CONDUCT.md).
+Usage
+-----
 
-By participating in this project you agree to abide by its terms.
-Please report unacceptable behavior to opensource@scrapinghub.com.
+Usage is simple:
 
-Companies using Scrapy
-======================
+.. code-block:: python
 
-See https://scrapy.org/companies/
+    from matchers import Matchers
 
-Commercial Support
-==================
+    content = '''
+    华为创立于1987年，是全球领先的ICT（信息与通信）基础设施和智能终端提供商，我们致力于把数字世界带入每个人、每个家庭、每个组织，构建万物互联的智能世界。目前华为有18.8万员工，业务遍及170多个国家和地区，服务30多亿人口。
+    地址： 深圳市龙岗区坂田华为总部办公楼。邮箱：liulinjun@huawei.com。电话：18813754316。
+    官网地址http://www.huawei.com/cn/，统一社会信用代码914403001922038216。
+    '''
 
-See https://scrapy.org/support/
+For: Web pages, strings, and JSON. Common Analytical Examples:
+
+.. code-block:: python
+
+    # email提取
+    >>> Matchers().match_email(content)
+    2019-09-13 22:43:42,337 - root - INFO - Start commonParse engine
+    ['liulinjun@huawei.com']
+
+    # 地址提取
+    >>> Matchers().match_address("服务30多亿人口。地址：深圳市龙岗区坂田华为总部办公楼。邮箱：liulinjun@huawei.com。")
+    ['深圳市龙岗区坂田华为总部办公楼']
+
+    # 手机号码提取
+     >>> Matchers().match_phone(content)
+    ['18813754316']
+
+    # 通用网页正文提取
+    >>> Matchers().match_content(requests.get("http://baijiahao.baidu.com/s?id=1644453217226236035&wfr=spider&for=pc").text)
+    '放假通知！原来，中秋和国庆之间还有一个节！放假通知！原来，中秋和国庆之间还有一个节！大河客户端发布时间：09-1215:20大河传媒有限公司虽然刚刚开学没几天可是还是想说：中秋节、国庆节马上就到啦！高速公路小客车是否免收通行费？快一起来了解！
+    ......'
+
+Supporting Reverse Generation of Regular Expressions:
+
+.. code-block:: python
+
+    >>> inputStr = ["http://www.huawei.com/cn/"]
+    >>> Matchers().generate_regular(inputStr,content)
+    '([a-z]{4}\\:/{2}[a-z]{3}\\.[a-z]{6}\\.[a-z]{3}/[a-z]{2}/)'
+
+According to the complete label content input, it is extended to parse all the same attributes in the whole web page.:
+
+.. code-block:: python
+
+    >>> url = "https://xin.baidu.com/s?q=%E7%99%BE%E5%BA%A6"
+    # 想要解析所有的企业法人，只需要输入一个法人即可。
+    >>> inputStr = '向海龙'
+    >>> doc = requests.get(url).content.decode()
+    >>> Matchers().match_data_by_content(inputStr,doc)
+    ['百度', '梁志祥', '向海龙', '向海龙', '向海龙', '向海龙', '崔珊珊', '向海龙', '吴迪', '刘维', '李彦宏']
+

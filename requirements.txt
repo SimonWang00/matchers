@@ -1,0 +1,3 @@
+python-stdnum
+bs4
+jieba

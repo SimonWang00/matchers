@@ -1,6 +1,6 @@
 pymatchers
 ===========
-[![Downloads](https://github.com/SimonWang00/matchers)](https://github.com/SimonWang00/matchers)
+[![Downloads](https://pepy.tech/badge/pymatchers)](https://pepy.tech/project/pymatchers)
 [![image](https://img.shields.io/pypi/pyversions/requests.svg)](https://pypi.org/project/pymatchers/)
 [![image](https://img.shields.io/github/contributors/psf/grequests.svg)](https://github.com/SimonWang00/matchers/graphs/contributors)
 <img src="./pictures/架构图.png?raw=true"/> 

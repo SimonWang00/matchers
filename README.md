@@ -1,24 +1,21 @@
 pymatchers
 ===========
 [![Downloads](https://pepy.tech/badge/pymatchers)](https://pepy.tech/project/pymatchers)
-[![image](https://img.shields.io/pypi/pyversions/requests.svg)](https://pypi.org/project/pymatchers/)
+[![image](https://img.shields.io/badge/python-3.%2B-blue)](https://pypi.org/project/pymatchers/)
 [![image](https://img.shields.io/badge/contributors-1-blue)](https://github.com/SimonWang00/matchers/graphs/contributors)
-<img src="./pictures/架构图.png?raw=true"/> 
+![image](https://raw.githubusercontent.com/SimonWang00/matchers/master/pictures/%E6%9E%B6%E6%9E%84%E5%9B%BE.png)
 
 Overview
 ========
-
 **pymatchers** 打造最好用的万能解析神器/Create the Best Universal Resolution Artifact.
 
 Requirements
 ============
-
 * Python 3.+
 * Works on Linux, Windows, Mac OSX, BSD
 
 Install
 =======
-
 The quick way:
 ```
 pip install pymatchers
@@ -79,7 +76,6 @@ According to the complete label content input, it is extended to parse all the s
 
 Feature Support
 ---------------
-
 Pymatchers is ready for today's all type data string.
 
 -   Quickly parse web pages, JSON and text according to feature content.
@@ -87,5 +83,5 @@ Pymatchers is ready for today's all type data string.
 -   Supporting the general parsing of web pages.
 -   Support one-click resolution of telephone number, IP, ID number, address, person name and link, etc.
 
-pymatchers officially supports Python 3+, and runs great onPyPy.
+pymatchers officially supports Python 3+, and runs great on PyPy.
 

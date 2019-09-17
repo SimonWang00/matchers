@@ -2,7 +2,7 @@ pymatchers
 ===========
 [![Downloads](https://pepy.tech/badge/pymatchers)](https://pepy.tech/project/pymatchers)
 [![image](https://img.shields.io/pypi/pyversions/requests.svg)](https://pypi.org/project/pymatchers/)
-[![image](https://img.shields.io/github/contributors/psf/grequests.svg)](https://github.com/SimonWang00/matchers/graphs/contributors)
+[![image](https://img.shields.io/badge/contributors-1-blue)](https://github.com/SimonWang00/matchers/graphs/contributors)
 <img src="./pictures/架构图.png?raw=true"/> 
 
 Overview
@@ -19,7 +19,7 @@ Requirements
 Install
 =======
 
-The quick way::
+The quick way:
 ```
 pip install pymatchers
 ✨🍰✨

@@ -7,7 +7,7 @@ pymatchers
 ![image](https://img.shields.io/badge/build-passing-blue)
 
 <center class="half">
-    <img src="https://raw.githubusercontent.com/SimonWang00/matchers/master/pictures/%E6%9E%B6%E6%9E%84%E5%9B%BE.png" width="200"/><img src="https://github.com/SimonWang00/matchers/blob/master/pictures/architecture_diagram.png" width="200"/><img src="图片链接" width="200"/>
+    <img src="https://raw.githubusercontent.com/SimonWang00/matchers/master/pictures/%E6%9E%B6%E6%9E%84%E5%9B%BE.png" width="200"/><img src="https://github.com/SimonWang00/matchers/blob/master/pictures/architecture_diagram.png" width="200"/>
 </center>
 
 

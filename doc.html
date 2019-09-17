@@ -1,0 +1,96 @@
+
+    <html lang="zh-cn">
+    <head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <link href="default.css" rel="stylesheet">
+    <link href="github.css" rel="stylesheet">
+    </head>
+    <body>
+    <h1 id="pymatchers">pymatchers</h1>
+<p><a href="https://pepy.tech/project/pymatchers"><img alt="Downloads" src="https://pepy.tech/badge/pymatchers" /></a>
+<a href="https://pypi.org/project/pymatchers/"><img alt="image" src="https://img.shields.io/badge/python-3.%2B-blue" /></a>
+<a href="https://github.com/SimonWang00/matchers/graphs/contributors"><img alt="image" src="https://img.shields.io/badge/contributors-1-blue" /></a>
+<img alt="image" src="https://img.shields.io/badge/support-html%20%7C%20json%20%7C%20text-blue" />
+<img alt="image" src="https://img.shields.io/badge/build-passing-blue" /></p>
+<p><center class="half">
+    <img src="https://raw.githubusercontent.com/SimonWang00/matchers/master/pictures/%E6%9E%B6%E6%9E%84%E5%9B%BE.png" width="650">
+    <img src="https://raw.githubusercontent.com/SimonWang00/matchers/master/pictures/architecture_diagram.png" width="650">
+</center></p>
+<h1 id="overview">Overview</h1>
+<p><strong>pymatchers</strong> 打造最好用的万能解析神器/Create the Best Universal Resolution Artifact.</p>
+<h1 id="requirements">Requirements</h1>
+<ul>
+<li>Python 3.+</li>
+<li>Works on Linux, Windows, Mac OSX, BSD</li>
+</ul>
+<h1 id="install">Install</h1>
+<p>The quick way:</p>
+<div class="codehilite"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">pymatchers</span>
+<span class="err">✨🍰✨</span>
+</pre></div>
+
+
+<p>Behold, the power of pymatchers:</p>
+<blockquote>
+<div class="codehilite"><pre><span></span><span class="n"> >> from</span> <span class="n">pymatchers</span> <span class="n">import</span> <span class="n">Matchers</span>
+<p> >> content = '''
+        华为创立于1987年，是全球领先的ICT（信息与通信）基础设施和智能终端提供商，我们致力于把数字世界带入每个人、每个家庭、每个组织，构建万物互联的智能世界。目前华为有18.8万员工，业务遍及170多个国家和地区，服务30多亿人口。
+        地址： 深圳市龙岗区坂田华为总部办公楼。邮箱：liulinjun@huawei.com。电话：18813754316。
+        官网地址http://www.huawei.com/cn/，统一社会信用代码914403001922038216。
+        '''
+</p>
+</blockquote>
+    <p>For: Web pages, strings, and JSON. Common Analytical Examples:</p>
+<div class="codehilite"><pre>
+    <span class="o">&gt;&gt;&gt;</span># <span class="nv">email</span>提取<span class="o">/</span><span class="nv">email</span> <span class="nv">extraction</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="nv">Matchers</span><span class="ss">()</span>.<span class="nv">match_email</span><span class="ss">(</span><span class="nv">content</span><span class="ss">)</span>
+    <span class="mi">2019</span><span class="o">-</span><span class="mi">09</span><span class="o">-</span><span class="mi">13</span> <span class="mi">22</span>:<span class="mi">43</span>:<span class="mi">42</span>,<span class="mi">337</span> <span class="o">-</span> <span class="nv">root</span> <span class="o">-</span> <span class="nv">INFO</span> <span class="o">-</span> <span class="nv">Start</span> <span class="nv">commonParse</span> <span class="nv">engine</span>
+    [<span class="s1">&#39;</span><span class="s">liulinjun@huawei.com</span><span class="s1">&#39;</span>]
+
+    <span class="o">&gt;&gt;&gt;</span># 地址提取<span class="o">/</span><span class="nv">Address</span> <span class="nv">extraction</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="nv">Matchers</span><span class="ss">()</span>.<span class="nv">match_address</span><span class="ss">(</span><span class="s2">&quot;</span><span class="s">服务30多亿人口。地址：深圳市龙岗区坂田华为总部办公楼。邮箱：liulinjun@huawei.com。</span><span class="s2">&quot;</span><span class="ss">)</span>
+    [<span class="s1">&#39;</span><span class="s">深圳市龙岗区坂田华为总部办公楼</span><span class="s1">&#39;</span>]
+
+    <span class="o">&gt;&gt;&gt;</span># 手机号码提取<span class="o">/</span><span class="nv">Mobile</span> <span class="nv">phone</span> <span class="nv">number</span> <span class="nv">extraction</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="nv">Matchers</span><span class="ss">()</span>.<span class="nv">match_phone</span><span class="ss">(</span><span class="nv">content</span><span class="ss">)</span>
+    [<span class="s1">&#39;</span><span class="s">18813754316</span><span class="s1">&#39;</span>]
+
+    <span class="o">&gt;&gt;&gt;</span># 通用网页正文提取<span class="o">/</span><span class="nv">General</span> <span class="nv">Web</span> <span class="nv">Page</span> <span class="nv">Text</span> <span class="nv">Extraction</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="nv">Matchers</span><span class="ss">()</span>.<span class="nv">match_content</span><span class="ss">(</span><span class="nv">requests</span>.<span class="nv">get</span><span class="ss">(</span><span class="s2">&quot;</span><span class="s">http://baijiahao.baidu.com/s?id=1644453217226236035&amp;wfr=spider&amp;for=pc</span><span class="s2">&quot;</span><span class="ss">)</span>.<span class="nv">text</span><span class="ss">)</span>
+    <span class="s1">&#39;&#39;&#39;</span><span class="s">放假通知！原来，中秋和国庆之间还有一个节！放假通知！原来，中秋和国庆之间还有一个节！</span>
+    大河客户端发布时间：<span class="mi">09</span><span class="o">-</span><span class="mi">1215</span>:<span class="mi">20</span>大河传媒有限公司虽然刚刚开学没几天可是还是想说：中秋节、国庆节马上就到啦！
+    高速公路小客车是否免收通行费？快一起来了解！......<span class="s1">&#39;&#39;&#39;</span>
+</pre></div>
+
+<p>Supporting Reverse Generation of Regular Expressions:</p>
+<div class="codehilite">
+    <pre><span class="n"></span></pre>
+<div class="codehilite"> <pre><span class="n"> >> #正则表达式逆向生成/Reverse Generation of Regular Expressions </span></pre> </div>
+<div class="codehilite"> <pre><span class="n"> >> inputStr = ["http://www.huawei.com/cn/"] </span></pre> </div>
+<div class="codehilite"> <pre><span class="n"> >> Matchers().generate_regular(inputStr,content) </span></pre> </div>
+<div class="codehilite"> <pre><span class="n">   '([a-z]{4}\:/{2}[a-z]{3}\.[a-z]{6}\.[a-z]{3}/[a-z]{2}/)'</span></pre> </div>
+</div>
+
+    <P>According to the complete label content input, it is extended to parse all the same attributes in the whole web page:</P>
+<div class="codehilite"><pre>
+<span class="o">&gt;&gt;&gt;</span> <span class="nv">url</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="s">https://xin.baidu.com/s?q=%E7%99%BE%E5%BA%A6</span><span class="s2">&quot;</span>
+<span class="o">&gt;&gt;&gt;</span> # 想要解析所有的企业法人，只需要输入一个法人即可。<span class="o">/</span><span class="k">If</span> <span class="nv">you</span> <span class="nv">want</span> <span class="nv">to</span> <span class="nv">analyze</span> <span class="nv">all</span> <span class="nv">corporate</span> <span class="nv">entities</span>, <span class="nv">you</span> <span class="nv">only</span> <span class="nv">need</span> <span class="nv">to</span> <span class="nv">enter</span> <span class="nv">a</span> <span class="nv">legal</span> <span class="nv">person</span>.
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">inputStr</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">向海龙</span><span class="s1">&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nv">doc</span> <span class="o">=</span> <span class="nv">requests</span>.<span class="nv">get</span><span class="ss">(</span><span class="nv">url</span><span class="ss">)</span>.<span class="nv">content</span>.<span class="nv">decode</span><span class="ss">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nv">Matchers</span><span class="ss">()</span>.<span class="nv">match_data_by_content</span><span class="ss">(</span><span class="nb">inputStr</span>,<span class="nv">doc</span><span class="ss">)</span>
+[<span class="s1">&#39;</span><span class="s">百度</span><span class="s1">&#39;</span>, <span class="s1">&#39;</span><span class="s">梁志祥</span><span class="s1">&#39;</span>, <span class="s1">&#39;</span><span class="s">向海龙</span><span class="s1">&#39;</span>, <span class="s1">&#39;</span><span class="s">向海龙</span><span class="s1">&#39;</span>, <span class="s1">&#39;</span><span class="s">向海龙</span><span class="s1">&#39;</span>, <span class="s1">&#39;</span><span class="s">向海龙</span><span class="s1">&#39;</span>, <span class="s1">&#39;</span><span class="s">崔珊珊</span><span class="s1">&#39;</span>, <span class="s1">&#39;</span><span class="s">向海龙</span><span class="s1">&#39;</span>, <span class="s1">&#39;</span><span class="s">吴迪</span><span class="s1">&#39;</span>, <span class="s1">&#39;</span><span class="s">刘维</span><span class="s1">&#39;</span>, <span class="s1">&#39;</span><span class="s">李彦宏</span><span class="s1">&#39;</span>]
+</pre></div>
+
+
+<h2 id="feature-support">Feature Support</h2>
+<p>Pymatchers is ready for today's all type data string.</p>
+<ul>
+<li>Quickly parse web pages, JSON and text according to feature content.</li>
+<li>Supporting the reverse generation of regular expressions.</li>
+<li>Supporting the general parsing of web pages.</li>
+<li>Support one-click resolution of telephone number, IP, ID number, address, person name and link, etc.</li>
+</ul>
+<p>pymatchers officially supports Python 3+, and runs great on PyPy.</p>
+    </body>
+    </html>
+    

@@ -1,14 +1,14 @@
 pymatchers
 ===========
 [![Downloads](https://github.com/SimonWang00/matchers)](https://github.com/SimonWang00/matchers)
-[![image](https://img.shields.io/pypi/pyversions/pymatchers.svg)](https://pypi.org/project/pymatchers/)
-[![image](https://github.com/SimonWang00/matchers/requests.svg)](https://github.com/SimonWang00/matchers/graphs/contributors)
+[![image](https://img.shields.io/pypi/pyversions/requests.svg)](https://pypi.org/project/pymatchers/)
+[![image](https://img.shields.io/github/contributors/psf/grequests.svg)](https://github.com/SimonWang00/matchers/graphs/contributors)
 <img src="./pictures/架构图.png?raw=true"/> 
 
 Overview
 ========
 
-打造最好用的万能解析神器/Create the Best Universal Resolution Artifact.
+**pymatchers** 打造最好用的万能解析神器/Create the Best Universal Resolution Artifact.
 
 Requirements
 ============

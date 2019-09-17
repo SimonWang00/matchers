@@ -4,6 +4,7 @@ pymatchers
 [![image](https://img.shields.io/badge/python-3.%2B-blue)](https://pypi.org/project/pymatchers/)
 [![image](https://img.shields.io/badge/contributors-1-blue)](https://github.com/SimonWang00/matchers/graphs/contributors)
 ![image](https://img.shields.io/badge/support-html%20%7C%20json%20%7Ctext-blue)
+![image](https://img.shields.io/badge/build-passing-blue)
 ![image](https://raw.githubusercontent.com/SimonWang00/matchers/master/pictures/%E6%9E%B6%E6%9E%84%E5%9B%BE.png)
 
 Overview
